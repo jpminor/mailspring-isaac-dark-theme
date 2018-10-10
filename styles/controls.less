@@ -23,15 +23,23 @@ body {
 		background: lighten(@ndk-dark, 12%);
 		color: #fff;
 	}
-	#sheet-container {
-		.sheet-toolbar {
+}
+#sheet-container {
+	.sheet-toolbar {
+		background: @ndk-dark;
+		border-bottom: 1px solid lighten(@ndk-dark, 2%);
+		height: 57px;
+    min-height: 57px;
+    max-height: 57px;
+		padding: 10px 5px 0;
+		.sheet-toolbar-container {
 			background: @ndk-dark;
-			border-bottom: 1px solid lighten(@ndk-dark, 2%);
-			padding: 10px 10px 47px;
-			.sheet-toolbar-container {
-				background: @ndk-dark;
-				color: @white;
-				height: 45px !important;
+			color: @white;
+			height: 45px !important;
+			.toolbar-RootSidebar {
+				.sheet-toolbar .btn-toolbar:only-of-type {
+					margin-right: 20px;
+				}
 				.toolbar-activity {
 					order: 24;
 					margin-right: 10px;
@@ -44,62 +52,59 @@ body {
 						color: darken(@ndk-dark, 5%);
 						padding: 0 3px;
 					}
+					.item-compose .content-mask {
+						background: @ndk-lighter;
+					}
 				}
-				.toolbar-ThreadList {
-					.item-container {
-						.selection-bar {
-							width: 0;
-							.absolute {
-								background-color: @ndk-dark;
+			}
+			.toolbar-ThreadList {
+				.item-container {
+					.selection-bar {
+						width: 0;
+						.absolute {
+							background-color: @ndk-dark;
+						}
+					}
+					.thread-search-bar {
+						background: lighten(@ndk-dark, 10%);
+						box-shadow: none;
+						height: 30px;
+						line-height: 30px;
+						margin-top: 3.5px;
+						padding-left: 10px;
+						.tokenizing-contenteditable {
+							.layer {
+								padding: 0 10px;
+							}
+							.layer-tokens {
+								color: @white;
 							}
 						}
-						.thread-search-bar {
+						.suggestions {
 							background: lighten(@ndk-dark, 10%);
-							box-shadow: none;
-							flex: 1 1 24%;
-							height: 30px;
-							line-height: 30px;
-							margin-top: 3.5px;
-							order: 0;
-							padding-left: 10px;
-							.tokenizing-contenteditable {
-								.layer {
-									padding: 0 10px;
+							padding: 15px 0;
+							top: 34px;
+							.suggestion {
+								padding: 2px 15px;
+								&.selected {
+									background-color: @ndk-accent;
+									color: @white;
 								}
-								.layer-tokens {
+								&:hover:not(.selected) {
+									background-color: fade(@ndk-light, 12%);
 									color: @white;
 								}
 							}
-							.suggestions {
-								background: lighten(@ndk-dark, 10%);
-								padding: 15px 0;
-								top: 34px;
-								.suggestion {
-									padding: 2px 15px;
-									&.selected {
-										background-color: @ndk-accent;
-										color: @white;
-									}
-									&:hover:not(.selected) {
-										background-color: fade(@ndk-light, 12%);
-										color: @white;
-									}
-								}
-								.footer {
-									border-top: none;
-									font-size: .857em;
-									padding: 5px 15px;
-								}
+							.footer {
+								border-top: none;
+								font-size: .857em;
+								padding: 5px 15px;
 							}
 						}
 					}
 				}
-				.toolbar-MessageList {
-					position: relative !important;
-					top: auto !important;
-					left: auto !important;
-					width: auto !important;
-				}
+			}
+			.toolbar-MessageList {
 				.message-toolbar-items {
 					order: 25;
 				}
@@ -114,18 +119,49 @@ body {
 					order: 28;
 					margin-right: 13.25%;
 				}
-				.item-compose .content-mask {
-					background: @ndk-lighter;
-				}
-				.toolbar-MessageListSidebar {
-					padding-right: 22px;
-				}
-				.toolbar-Preferences {
-					background: @ndk-dark;
-					border-bottom: none;
+			}
+			.toolbar-MessageListSidebar {
+				padding-right: 17px;
+				.btn-toolbar:only-of-type {
+					margin: auto !important;
+					width: 100%;
 				}
 			}
+			.toolbar-Preferences {
+				background: @ndk-dark;
+				border-bottom: none;
+			}
 		}
+	}
+}
+
+#sheet-container .sheet-toolbar .sheet-toolbar-container.mode-list  {
+	& .toolbar-ThreadList .thread-search-bar {
+		flex: 1 1 24%;
+		order: 0;
+	}
+	&	.toolbar-MessageList {
+		position: relative !important;
+		top: auto !important;
+		left: auto !important;
+		width: auto !important;
+	}
+}
+#sheet-container {
+	.sheet-toolbar .sheet-toolbar-container.mode-split  {
+		& .toolbar-ThreadList .thread-search-bar {
+			flex: 1 1 80%;
+			order: 0;
+		}
+		&	.toolbar-MessageList {
+			position: initial;
+			top: initial;
+			left: initial;
+			width: initial;
+		}
+	}
+	#message-list {
+		padding-top: 20px
 	}
 }
 
@@ -244,10 +280,10 @@ body.platform-win32 {
 		margin-left: 0;
 	}
 	.btn-toolbar {
-		height: 2em;
-		line-height: 1;
-		margin-top: 6px;
+		height: 37px;
+		margin-top: 0;
 		margin-left: 0;
+		vertical-align: center;
 		.content-mask {
 			background-color: @ndk-light !important;
 			transition: all .2s ease-in-out;
