@@ -16,7 +16,6 @@
 		.content-mask {
 			background-color: @ndk-accent !important;
 		}
-
 	}
 }
 
@@ -129,9 +128,9 @@
 			border-radius: @base-border-radius @base-border-radius 0 0;
 			z-index: -9999;
 		}
-		.header-toggle-control img {
-			zoom: 0.4 !important;
-		}
+		// .header-toggle-control img {
+		// 	zoom: 0.4 !important;
+		// }
 		.message-participants {
 			.from-contact,
 			.participant-primary {
@@ -190,7 +189,7 @@
 						background-color: lighten(@ndk-dark, 5%);
 						border-bottom: 1px solid darken(@ndk-light, 40%);
 						min-height: 40px;
-						padding: 10px 0;
+						padding: 12px 0;
 					}
 					.divider {
 						border-right: none;
@@ -364,7 +363,7 @@ iframe {
 }
 
 .download-all {
-	margin-top: 40px;
+	margin-top: 30px;
 	padding-top: 20px;
 	border-top: 1px solid lighten(@ndk-dark; 80%);
 }
@@ -372,13 +371,21 @@ iframe {
 .attachments-area {
 	margin: 20px 0 0;
 	.nylas-attachment-item {
-		margin: 0;
+		font-size: 0.857em;
+		margin: 0 10px 10px 0;
+		width: calc(48%);
+		min-width: auto;
+		.inner {
+			background: none;
+			border: 1px solid lighten(@ndk-dark; 80%);
+			height: 43px;
+		}
 		.file-thumbnail-preview {
 			display: none;
 		}
 		.file-info-wrap {
 			border: none;
-			padding: 0;
+			padding: 10px 8px;
 			.file-icon {
 				-webkit-filter: grayscale(100%);
 				filter: grayscale(100%);
@@ -414,21 +421,6 @@ iframe {
 	}
 }
 
-
-// Compose Popout
-.layout-mode-popout {
-	.composer-header {
-		border-bottom: 1px solid lighten(@ndk-dark, 2%);
-	}
-	.composer-body-wrap {
-		margin-top: 0;
-	}
-	.RichEditor-content {
-		padding-top: 20px
-	}
-
-}
-
 // Print popout
 
 .print-note {
@@ -438,7 +430,6 @@ iframe {
 	font-size: 1em;
 	padding: 15px;
 }
-
 #print-header *{
 	font-size: 1em !important;
 	color: @ndk-dark;
@@ -475,5 +466,11 @@ iframe {
 			float: none;
 			display: block;
 		}
+	}
+}
+
+.mode-split #message-list {
+	.message-subject-wrap {
+		padding-top: 20px;
 	}
 }

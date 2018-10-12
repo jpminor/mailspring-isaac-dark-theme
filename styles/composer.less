@@ -161,9 +161,12 @@
 	}
 	.composer-body-wrap {
     border-top: 4px solid @ndk-dark;
-    margin-top: 5px;
-		.hiding-quoted-text {
-			padding-bottom: 20px
+		padding: 0 20px 20px;
+		.quoted-text-control {
+			margin: 0 0 20px;
+		}
+		.attachments-area {
+			margin: 0 0 10px;
 		}
 	}
 	.composer-action-bar-wrap {
@@ -273,4 +276,18 @@
 }
 .tokenizing-field .tokenizing-field-input input {
 	padding: 0;
+}
+
+// Compose Popout
+.layout-mode-popout {
+	.composer-header {
+		border-bottom: 1px solid lighten(@ndk-dark, 2%);
+	}
+	.composer-body-wrap {
+		margin-top: 0;
+	}
+	.RichEditor-content {
+		padding-top: 20px
+	}
+
 }

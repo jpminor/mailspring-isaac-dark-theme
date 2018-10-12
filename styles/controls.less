@@ -24,6 +24,13 @@ body {
 		color: #fff;
 	}
 }
+
+pre {
+	background: @ndk-accent !important;
+	padding: 1em !important;
+	white-space: normal;
+}
+
 #sheet-container {
 	.sheet-toolbar {
 		background: @ndk-dark;
@@ -134,7 +141,7 @@ body {
 		}
 	}
 }
-
+/* List View */
 #sheet-container .sheet-toolbar .sheet-toolbar-container.mode-list  {
 	& .toolbar-ThreadList .thread-search-bar {
 		flex: 1 1 24%;
@@ -147,6 +154,7 @@ body {
 		width: auto !important;
 	}
 }
+/* Read View */
 #sheet-container {
 	.sheet-toolbar .sheet-toolbar-container.mode-split  {
 		& .toolbar-ThreadList .thread-search-bar {
@@ -159,9 +167,6 @@ body {
 			left: initial;
 			width: initial;
 		}
-	}
-	#message-list {
-		padding-top: 20px
 	}
 }
 
@@ -372,11 +377,11 @@ body.platform-win32 {
 
 .RichEditor-root {
 	background-color: transparent;
-	// Remove quote indenting
+	padding: 0 0 20px;
 	blockquote {
 		border-left: none;
 		color: @ndk-light;
-		padding: 0;
+		padding: 10px 20px;
 	}
 }
 .RichEditor-toolbar {
@@ -401,13 +406,35 @@ body.platform-win32 {
 	button {
 		flex: auto;
     flex-shrink: 0;
+		font-size: 0.857em;
     max-width: auto;
-    min-width: 30px
+    min-width: 30px;
+		&:hover {
+			color: @white;
+		}
+	}
+	.dropdown {
+		background: lighten(@ndk-dark, 10%);
+		border-radius: @base-border-radius;
+		box-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.3), 0 -0.5px 0 rgba(0, 0, 0, 0.3), 0.5px 0 0 rgba(0, 0, 0, 0.5), -0.5px 0 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.3);
+		color: @ndk-light;
+		input, input[type='text'] {
+			background: lighten(@ndk-dark, 10%);
+			box-shadow: none !important;
+			border: none;
+			color: @white !important;
+			font-weight: 500;
+			padding: 0;
+			text-indent: 0;
+		}
+		.link-picker .dropdown {
+			padding: 10px
+		}
 	}
 }
 .RichEditor-content {
 	color: @white !important;
-	padding: 15px 10px;
+	padding: 15px 5px;
 }
 
 /* Preferences */
