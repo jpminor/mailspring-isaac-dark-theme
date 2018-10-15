@@ -88,6 +88,17 @@
 		.item .icon {
 			display: none;
 		}
+
+		.item {
+			padding-right: 0;
+			&.editing {
+				margin-left: -5px;
+				.item-input {
+					margin-left: 0;
+					width: 100%
+				}
+			}
+		}
 	}
 }
 
