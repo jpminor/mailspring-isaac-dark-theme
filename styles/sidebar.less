@@ -52,29 +52,42 @@
 	}
 }
 
-.nylas-outline-view {
-	.heading {
-		color: @ndk-light;
-		font-size: 0.857em;
-		font-weight: initial;
-		.add-item-button {
-			border-radius: 100px;
-			border: 1px solid #9a9a9a;
-			width: 1em;
-			height: 1em;
+.account-sidebar {
+	.nylas-outline-view {
+		&:first-child .heading span {
+			margin-right: 0;
 		}
-		.add-item-button:before {
-			content: "+";
-			line-height: 0.6em;
-    	padding-left: 0.15em;
+		.heading {
+			color: @ndk-light;
+			font-size: 0.857em;
+			font-weight: initial;
+			&:hover {
+				color: @white;
+				.add-item-button {
+					border: 1px solid @white;
+				}
+			}
+			.add-item-button {
+				border-radius: 100px;
+				border: 1px solid @ndk-light;
+				width: 1.75em;
+				height: 1em;
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+			.add-item-button:before {
+				content: "+";
+				line-height: 0.6em;
+	    	padding: 0 0.5em;
+			}
+			img {
+				visibility: hidden;
+			}
 		}
-		img {
-			visibility: hidden;
+		// Hide icons
+		.item .icon {
+			display: none;
 		}
-	}
-	// Hide icons
-	.item .icon {
-		display: none;
 	}
 }
 
