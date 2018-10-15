@@ -95,13 +95,20 @@
 		}
 		.item-container {
 			margin: 4px 10px 0 0 !important;
+			&:hover {
+				.disclosure-triangle {
+					div {
+						border-left-color: lighten(@ndk-dark, 40%);
+					}
+				}
+			}
 			.disclosure-triangle {
 				display: flex;
 				align-items: center;
 				padding: 7px 0 7px 11px !important;
 				width: 15px;
 				div {
-					border-left-color: darken(@ndk-light, 40%);
+					border-left-color: lighten(@ndk-dark, 10%);
 					border-top-width: 3px;
 					border-bottom-width: 3px;
 					border-left-width: 5px;
@@ -109,7 +116,6 @@
 				}
 			}
 			.item {
-				padding: 0 10px !important;
 				color: @ndk-light;
 				cursor: pointer !important;
 				.item-count-box {
@@ -131,6 +137,23 @@
 					.icon {
 						img {
 							background: @white !important;
+						}
+					}
+				}
+			}
+		}
+		.item-children {
+			padding-left: 0;
+			.item-container {
+				.item {
+					overflow: visible;
+					.name {
+						overflow: visible;
+						&:before {
+						    content: "·";
+								color: @ndk-accent;
+						    padding-right: 9px;
+						    margin-left: -12px;
 						}
 					}
 				}
