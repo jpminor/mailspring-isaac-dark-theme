@@ -2,25 +2,25 @@
 
 .item-back {
 	.item-back-title {
-		color: @ndk-lighter !important;
+		color: @isaac-lighter !important;
 		font-size: 16px !important;
 		padding-top: 2px;
 	}
 	.content-mask {
-		background-color: @ndk-light;
+		background-color: @isaac-light;
 	}
 	&:hover {
 		.item-back-title {
 			color: @white !important;
 		}
 		.content-mask {
-			background-color: @ndk-accent !important;
+			background-color: @isaac-accent !important;
 		}
 	}
 }
 
 .column-MessageList {
-	background: @ndk-dark;
+	background: @isaac-dark;
 	.find-in-thread {
 		border-bottom: none;
 		height: 0;
@@ -31,7 +31,7 @@
 			align-items: center;
 			.input-wrap {
 				input {
-					background: lighten(@ndk-dark, 10%);
+					background: lighten(@isaac-dark, 10%);
 					border: none;
 					box-shadow: none;
 					font-size: 1em;
@@ -81,8 +81,8 @@
 		filter: none;
 		margin-right: 4px;
 		font-size: 0.75em;
-		color: @ndk-light !important;
-		background: darken(@ndk-dark, 2%) !important;
+		color: @isaac-light !important;
+		background: darken(@isaac-dark, 2%) !important;
 		box-shadow: none !important;
 		line-height: 19px;
 		margin-top: 4px;
@@ -100,19 +100,19 @@
 			background: transparent;
     	border: none;
     	box-shadow: none;
-			color: darken(@ndk-light, 20%);
+			color: darken(@isaac-light, 20%);
 		}
 		// Stack Counter
 		.num-messages {
-			background: @ndk-dark;
-			border-color: @ndk-dark;
+			background: @isaac-dark;
+			border-color: @isaac-dark;
 			color: @white;
 			margin-top: -18px;
 		}
 	}
 	// Mail Header
 	.message-header {
-		border-bottom: 1px solid lighten(@ndk-dark; 80%);
+		border-bottom: 1px solid lighten(@isaac-dark; 80%);
 		font-size: 1em;
 		position: relative;
 		padding: 20px 0;
@@ -124,7 +124,7 @@
 			height: 100%;
 			content: "";
 			display: block;
-			background: darken(@ndk-dark, 2%);
+			background: darken(@isaac-dark, 2%);
 			border-radius: @base-border-radius @base-border-radius 0 0;
 			z-index: -9999;
 		}
@@ -134,7 +134,7 @@
 		.message-participants {
 			.from-contact,
 			.participant-primary {
-				color: @ndk-dark;
+				color: @isaac-dark;
 			}
 		}
 	}
@@ -148,7 +148,7 @@
 		.message-icons-wrap {
 			align-self: center;
 			img {
-				background-color: @ndk-lighter;
+				background-color: @isaac-lighter;
 			}
 			img:hover {
 				background-color: @white;
@@ -161,22 +161,22 @@
 		.message-item-white-wrap {
 			background: @white;
 			border-radius: @base-border-radius;
-			color: @ndk-dark;
+			color: @isaac-dark;
 			box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), 0 1px 25px rgba(0, 0, 0, 0.05);
 
 			&.composer-outer-wrap {
-				background: lighten(@ndk-dark, 5%) !important;
+				background: lighten(@isaac-dark, 5%) !important;
 
 				&.focused {
 					box-shadow: none;
 				}
 				.RichEditor-root {
 					background-color: transparent;
-					border-color: darken(@ndk-light, 40%);
+					border-color: darken(@isaac-light, 40%);
 					padding-top: 10px;
 				}
 				.RichEditor-toolbar {
-					border-bottom: 1px solid darken(@ndk-light, 40%);
+					border-bottom: 1px solid darken(@isaac-light, 40%);
 					opacity: 1 !important;
 					height: 50px !important;
 					width: 100% !important;
@@ -186,8 +186,8 @@
 						margin: auto;
 					}
 					.floating-container {
-						background-color: lighten(@ndk-dark, 5%);
-						border-bottom: 1px solid darken(@ndk-light, 40%);
+						background-color: lighten(@isaac-dark, 5%);
+						border-bottom: 1px solid darken(@isaac-light, 40%);
 						min-height: 40px;
 						padding: 12px 0;
 					}
@@ -209,8 +209,8 @@
 		}
 		&.collapsed {
 			.message-item-white-wrap {
-				background-color: lighten(@ndk-dark, 5%);
-				color: darken(@ndk-light, 20%);
+				background-color: lighten(@isaac-dark, 5%);
+				color: darken(@isaac-light, 20%);
 				.message-item-area {
 					font-size: 1em;
 				}
@@ -246,13 +246,13 @@
 // Profile Sidebar
 .column-MessageListSidebar {
 	border: none;
-	color: @ndk-light;
+	color: @isaac-light;
 	margin-right: 6px;
 	div[name=unsafe-component-wrapper] {
 		order: 2 !important;
 	}
 	.sidebar-section {
-		background: lighten(@ndk-dark, 5%);
+		background: lighten(@isaac-dark, 5%);
 		border-radius: @base-border-radius;
 		border: none;
 		margin-top: -4px;
@@ -286,7 +286,7 @@
 				height: 60px;
 				border-radius: 100%;
 				box-shadow: none;
-				background-color: @ndk-accent !important;
+				background-color: @isaac-accent !important;
 				background-image: none;
 			}
 			.personal-info {
@@ -301,7 +301,7 @@
 		&:active,
 		&:hover {
 			background: @white;
-			color: @ndk-dark;
+			color: @isaac-dark;
 		}
 	}
 	.related-threads {
@@ -309,8 +309,8 @@
 		border: none;
 
 		.toggle {
-			border-top: 1px solid lighten(@ndk-dark, 5%) !important;
-			color: @ndk-accent;
+			border-top: 1px solid lighten(@isaac-dark, 5%) !important;
+			color: @isaac-accent;
 		}
 
 		.toggle:hover {
@@ -318,11 +318,11 @@
 		}
 
 		.related-thread {
-			border-top: 1px solid lighten(@ndk-dark, 5%) !important;
+			border-top: 1px solid lighten(@isaac-dark, 5%) !important;
 		}
 
 		.related-thread:hover {
-			background: @ndk-accent;
+			background: @isaac-accent;
 			color: @white;
 		}
 	}
@@ -335,16 +335,16 @@ iframe {
 
 .ignore-in-parent-frame {
 	body {
-		color: @ndk-dark;
+		color: @isaac-dark;
 		overflow: hidden !important;
 	}
 
 	img {
-		color: @ndk-light;
+		color: @isaac-light;
 	}
 
 	blockquote {
-		border-color: lighten(@ndk-dark, 20%) !important;
+		border-color: lighten(@isaac-dark, 20%) !important;
 	}
 
 	a {
@@ -358,14 +358,14 @@ iframe {
 
 	hr {
 		border: none;
-		border-top: 1px solid darken(@ndk-light, 40%);
+		border-top: 1px solid darken(@isaac-light, 40%);
 	}
 }
 
 .download-all {
 	margin-top: 30px;
 	padding-top: 20px;
-	border-top: 1px solid lighten(@ndk-dark; 80%);
+	border-top: 1px solid lighten(@isaac-dark; 80%);
 }
 
 .attachments-area {
@@ -377,7 +377,7 @@ iframe {
 		min-width: auto;
 		.inner {
 			background: none;
-			border: 1px solid lighten(@ndk-dark; 80%);
+			border: 1px solid lighten(@isaac-dark; 80%);
 			height: 43px;
 		}
 		.file-thumbnail-preview {
@@ -391,13 +391,13 @@ iframe {
 				filter: grayscale(100%);
 			}
 			img.quicklook-icon:active {
-				background-color: @ndk-accent;
+				background-color: @isaac-accent;
 			}
 		}
 		.file-action-icon {
 			border: none;
 			img:active {
-				background-color: @ndk-accent;
+				background-color: @isaac-accent;
 			}
 		}
 		.file-action-icon:active {
@@ -410,21 +410,21 @@ iframe {
 			}
 			.file-preview {
 				.file-name-container {
-					background: fade(@ndk-accent, 95%);
+					background: fade(@isaac-accent, 95%);
 					min-height: 47px;
 				}
 			}
 		}
 	}
 	.inner {
-		color: @ndk-light;
+		color: @isaac-light;
 	}
 }
 
 // Print popout
 
 .print-note {
-	background: @ndk-accent;
+	background: @isaac-accent;
 	border: none;
 	color: @white;
 	font-size: 1em;
@@ -432,7 +432,7 @@ iframe {
 }
 #print-header *{
 	font-size: 1em !important;
-	color: @ndk-dark;
+	color: @isaac-dark;
 	.account {
 		margin-left: 0;
 		font-size: 1em !important;
@@ -440,9 +440,9 @@ iframe {
 }
 #print-button {
 	background: transparent;
-	border: 1px solid @ndk-accent;
+	border: 1px solid @isaac-accent;
 	border-radius: 100px;
-	color: @ndk-accent;
+	color: @isaac-accent;
 	font-size: .857em;
 	padding: 2px 11px;
 	line-height: 23px;
@@ -455,7 +455,7 @@ iframe {
 		background-color: transparent;
 	}
 	.show-hidden-messages  {
-		background: darken(@ndk-dark, 2%) !important;
+		background: darken(@isaac-dark, 2%) !important;
 		border: none;
 		border-radius: @base-border-radius;
 		color: @white;

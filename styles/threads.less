@@ -23,13 +23,13 @@
 		}
 	}
 	&.keyboard-cursor {
-		border-left: 4px solid @ndk-accent;
+		border-left: 4px solid @isaac-accent;
 		&.selected {
 			border-left: 4px solid @white;
 		}
 	}
 	.checkmark .inner {
-		border-color: darken(@ndk-light, 40%);
+		border-color: darken(@isaac-light, 40%);
 	}
 	&.selected {
 		.checkmark .inner {
@@ -50,12 +50,12 @@
 
 .open-tracking-icon,.open-tracking-message-status {
 	.content-mask {
-		background-color: @ndk-light;
+		background-color: @isaac-light;
 		zoom: .4 !important;
 	}
 }
 .open-tracking-message-status.opened img.content-mask {
-	background-color: @ndk-accent;
+	background-color: @isaac-accent;
 }
 
 .thread-list,
@@ -118,7 +118,7 @@
 					color: @white !important;
 					background-image: none;
 					.thread-injected-quick-actions {
-						background-color: lighten(@ndk-dark, 7%);
+						background-color: lighten(@isaac-dark, 7%);
 						padding-left: 7px;
 					}
 					.action {
@@ -145,9 +145,9 @@
 			.list-item {
 				cursor: pointer !important;
 				box-sizing: border-box;
-				background-color: lighten(@ndk-dark, 5%);
-				color: @ndk-light;
-				border-bottom: 1px solid lighten(@ndk-dark, 2%);
+				background-color: lighten(@isaac-dark, 5%);
+				color: @isaac-light;
+				border-bottom: 1px solid lighten(@isaac-dark, 2%);
 				&.unread {
 					color: @white;
 					.participants, .timestamp {
@@ -162,8 +162,8 @@
 					filter: none;
 					margin-right: 2px;
 					font-size: 0.75em;
-					color: @ndk-light !important;
-					background: (@ndk-dark) !important;
+					color: @isaac-light !important;
+					background: (@isaac-dark) !important;
 					border-radius: @base-border-radius;
 					box-shadow: none !important;
 					line-height: 19px;
@@ -174,19 +174,19 @@
 					}
 				}
 				&:hover {
-					background-color: lighten(@ndk-dark, 7%);
+					background-color: lighten(@isaac-dark, 7%);
 				}
 				&.focused {
-					color: @ndk-light !important;
+					color: @isaac-light !important;
 					border-left: 4px solid @white;
 				}
 				&.selected {
 					color: @white !important;
-					background-color: @ndk-accent !important;
+					background-color: @isaac-accent !important;
 					.mail-label {
 						opacity: .3;
 						.snooze-mail-label img {
-							background-color: @ndk-accent;
+							background-color: @isaac-accent;
 							margin-right: 10px;
 						}
 					}
@@ -214,49 +214,49 @@
 }
 
 .thread-list-empty-folder-bar {
-	background: @ndk-dark;
+	background: @isaac-dark;
 	border: none;
-	color: lighten(@ndk-dark, 40%);
+	color: lighten(@isaac-dark, 40%);
 	padding: 20px 15px;
 	border-radius: @base-border-radius;
 	.btn {
 		background: transparent;
 		border: 1px solid	@white;
 		border-radius: 100px;
-		color: @ndk-accent;
+		color: @isaac-accent;
 		height: 36px;
 		line-height: initial;
 		padding: 9px 20px;
 		transition: all .25s ease-in-out;
 		&:hover {
-			background: @ndk-accent;
-			border: 1px solid	@ndk-accent;
+			background: @isaac-accent;
+			border: 1px solid	@isaac-accent;
 			color: @white;
 		}
 	}
 }
 
-.thread-sendkh-bar {
-	.menu.showing-query.sendkh-container.showing-suggestions {
+.thread-seisaach-bar {
+	.menu.showing-query.seisaach-container.showing-suggestions {
 		.content-container {
-			background: darken(@ndk-dark, 3%);
+			background: darken(@isaac-dark, 3%);
 			.item {
-				color: darken(@ndk-light, 20%);
+				color: darken(@isaac-light, 20%);
 				span {
 					.primary {
 						color: inherit;
 					}
 					.secondary {
-						color: darken(@ndk-light, 40%);
+						color: darken(@isaac-light, 40%);
 					}
 				}
 				&:hover {
-					color: @ndk-light;
-					background: darken(@ndk-dark, 5%);
+					color: @isaac-light;
+					background: darken(@isaac-dark, 5%);
 				}
 				&.divider {
-					background: darken(@ndk-dark, 3%) !important;
-					color: darken(@ndk-light, 10%);
+					background: darken(@isaac-dark, 3%) !important;
+					color: darken(@isaac-light, 10%);
 				}
 				&.selected {
 					border-radius: @base-border-radius;

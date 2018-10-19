@@ -7,40 +7,43 @@ canvas {
 }
 
 body {
-	background: @ndk-dark;
+	background: @isaac-dark;
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: bold !important;
 	}
 	select, input,
 	input[type='text'], input[type='email'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='time'], input[type='url'] {
 		background: transparent;
-		border-color: darken(@ndk-light, 40%);
+		border-color: darken(@isaac-light, 40%);
 		border-radius: @base-border-radius;
 		color: @white;
 		margin: 5px 0;
+		&:focus {
+			box-shadow: none;
+		}
 	}
 	::selection, ::-webkit-selection {
-		background: lighten(@ndk-dark, 12%);
+		background: lighten(@isaac-dark, 12%);
 		color: #fff;
 	}
 }
 
 pre {
-	background: @ndk-accent !important;
+	background: @isaac-accent !important;
 	padding: 1em !important;
 	white-space: normal;
 }
 
 #sheet-container {
 	.sheet-toolbar {
-		background: @ndk-dark;
-		border-bottom: 1px solid lighten(@ndk-dark, 2%);
+		background: @isaac-dark;
+		border-bottom: 1px solid lighten(@isaac-dark, 2%);
 		height: 57px;
     min-height: 57px;
     max-height: 57px;
 		padding: 10px 5px 0;
 		.sheet-toolbar-container {
-			background: @ndk-dark;
+			background: @isaac-dark;
 			color: @white;
 			height: 45px !important;
 			.toolbar-RootSidebar {
@@ -51,16 +54,16 @@ pre {
 					order: 24;
 					margin-right: 10px;
 					.activity-toolbar-icon.content-mask {
-						background: @ndk-accent;
+						background: @isaac-accent;
 					}
 					.unread-count.active {
 						border-radius: 100px;
 						background-color: @white;
-						color: darken(@ndk-dark, 5%);
+						color: darken(@isaac-dark, 5%);
 						padding: 0 3px;
 					}
 					.item-compose .content-mask {
-						background: @ndk-lighter;
+						background: @isaac-lighter;
 					}
 				}
 			}
@@ -69,11 +72,11 @@ pre {
 					.selection-bar {
 						width: 0;
 						.absolute {
-							background-color: @ndk-dark;
+							background-color: @isaac-dark;
 						}
 					}
 					.thread-search-bar {
-						background: lighten(@ndk-dark, 10%);
+						background: lighten(@isaac-dark, 10%);
 						box-shadow: none;
 						height: 30px;
 						line-height: 30px;
@@ -88,17 +91,17 @@ pre {
 							}
 						}
 						.suggestions {
-							background: lighten(@ndk-dark, 10%);
+							background: lighten(@isaac-dark, 10%);
 							padding: 15px 0;
 							top: 34px;
 							.suggestion {
 								padding: 2px 15px;
 								&.selected {
-									background-color: @ndk-accent;
+									background-color: @isaac-accent;
 									color: @white;
 								}
 								&:hover:not(.selected) {
-									background-color: fade(@ndk-light, 12%);
+									background-color: fade(@isaac-light, 12%);
 									color: @white;
 								}
 							}
@@ -135,7 +138,7 @@ pre {
 				}
 			}
 			.toolbar-Preferences {
-				background: @ndk-dark;
+				background: @isaac-dark;
 				border-bottom: none;
 			}
 		}
@@ -171,15 +174,15 @@ pre {
 }
 
 .sheet {
-	background: @ndk-dark !important;
+	background: @isaac-dark !important;
 }
 
 .tooltip {
 	.scroll-tooltip {
-		background: @ndk-accent;
+		background: @isaac-accent;
 		border: none;
 		&::after {
-			border-left-color: @ndk-accent;
+			border-left-color: @isaac-accent;
 			border-width: 10px;
 			margin-left: -1px;
 			margin-top: -10px;
@@ -213,12 +216,12 @@ a {
 }
 
 a, a:visited {
-	color: @ndk-accent;
+	color: @isaac-accent;
 	text-decoration: none;
 }
 
 a:hover {
-	color: @ndk-accent;
+	color: @isaac-accent;
 	text-decoration: underline;
 }
 
@@ -242,7 +245,7 @@ body.platform-win32 {
 }
 
 .btn.btn-emphasis {
-	border-color: @ndk-accent !important;
+	border-color: @isaac-accent !important;
 	color: @white !important;
 	img.content-mask {
 		background-color: @white !important;
@@ -266,13 +269,13 @@ body.platform-win32 {
 		.secondary-items {
 			border-radius: @base-border-radius;
 			.item {
-				color: @ndk-light !important;
-				.sendkh-match {
+				color: @isaac-light !important;
+				.seisaach-match {
 					background: @white !important;
 				}
 				.button-dropdown {
 					img {
-						background: @ndk-light !important;
+						background: @isaac-light !important;
 					}
 				}
 			}
@@ -290,7 +293,7 @@ body.platform-win32 {
 		margin-left: 0;
 		vertical-align: center;
 		.content-mask {
-			background-color: @ndk-light !important;
+			background-color: @isaac-light !important;
 			transition: all .2s ease-in-out;
 			-webkit-transition: all .2s ease-in-out;
 		}
@@ -312,31 +315,31 @@ body.platform-win32 {
 
 /* Dropdown */
 
-.thread-sendkh-bar {
+.thread-seisaach-bar {
 	.menu {
 		.item.selected {
 			.primary {
 				color: @white !important;
 			}
 			.secondary {
-				color: @ndk-lighter !important;
+				color: @isaac-lighter !important;
 			}
 		}
-		&.sendkh-container {
+		&.seisaach-container {
 			input {
 				background: none;
 				border: none;
 				box-shadow: none;
 			}
 			.item {
-				background: darken(@ndk-dark, 2%) !important;
-				color: @ndk-light;
+				background: darken(@isaac-dark, 2%) !important;
+				color: @isaac-light;
 			}
 			.item.selected {
-				background: @ndk-accent !important;
+				background: @isaac-accent !important;
 				color: @white !important;
 			}
-			.sendkh-accessory {
+			.seisaach-accessory {
 				-webkit-filter: brightness(60%) saturate(7);
 				filter: brightness(60%) saturate(7);
 				&:last-child {
@@ -348,8 +351,8 @@ body.platform-win32 {
 	}
 	&.focused {
 		.menu {
-			&.sendkh-container {
-				.sendkh-accessory {
+			&.seisaach-container {
+				.seisaach-accessory {
 					-webkit-filter: brightness(80%) saturate(7);
 					filter: brightness(80%) saturate(7);
 					&:last-child {
@@ -364,7 +367,7 @@ body.platform-win32 {
 
 ::-webkit-input-placeholder {
 	/* Chrome/Opera/Safari */
-	color: darken(@ndk-light, 40%);
+	color: darken(@isaac-light, 40%);
 }
 
 /* Plugin page */
@@ -380,12 +383,12 @@ body.platform-win32 {
 	padding: 0 0 20px;
 	blockquote {
 		border-left: none;
-		color: @ndk-light;
+		color: @isaac-light;
 		padding: 10px 20px;
 	}
 }
 .RichEditor-toolbar {
-	border-bottom: 1px solid darken(@ndk-light, 40%);
+	border-bottom: 1px solid darken(@isaac-light, 40%);
 	height: 50px !important;
 	width: 100%;
 	text-align: center;
@@ -395,8 +398,8 @@ body.platform-win32 {
 		margin: auto;
 	}
 	.floating-container {
-		background: @ndk-dark;
-		border-bottom: 1px solid darken(@ndk-light, 40%);
+		background: @isaac-dark;
+		border-bottom: 1px solid darken(@isaac-light, 40%);
 		min-height: 50px;
 		padding-top: 10px;
 	}
@@ -414,12 +417,12 @@ body.platform-win32 {
 		}
 	}
 	.dropdown {
-		background: lighten(@ndk-dark, 10%);
+		background: lighten(@isaac-dark, 10%);
 		border-radius: @base-border-radius;
 		box-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.3), 0 -0.5px 0 rgba(0, 0, 0, 0.3), 0.5px 0 0 rgba(0, 0, 0, 0.5), -0.5px 0 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.3);
-		color: @ndk-light;
+		color: @isaac-light;
 		input, input[type='text'] {
-			background: lighten(@ndk-dark, 10%);
+			background: lighten(@isaac-dark, 10%);
 			box-shadow: none !important;
 			border: none;
 			color: @white !important;
@@ -441,13 +444,13 @@ body.platform-win32 {
 
 .appearance-mode {
 	background-color: transparent !important;
-	border: 1px solid lighten(@ndk-dark, 20%) !important;
-	color: @ndk-light;
+	border: 1px solid lighten(@isaac-dark, 20%) !important;
+	color: @isaac-light;
 	img.content-mask {
 		background-color: @white !important;
 	}
 	&.active {
-		background-color: @ndk-accent !important;
+		background-color: @isaac-accent !important;
 		color: @white !important;
 		border: 1px solid @white !important;
 	}
@@ -456,7 +459,7 @@ body.platform-win32 {
 .preferences-wrap {
 	section {padding-bottom: 20px;}
 	h2,h3 {
-		color: @ndk-light;
+		color: @isaac-light;
 		font-weight: 500;
 		font-size: 16px;
 	}
@@ -465,14 +468,14 @@ body.platform-win32 {
 		border-radius: 100px;
 		background: transparent;
 		color: @white;
-		border: 1px solid @ndk-light;
+		border: 1px solid @isaac-light;
 		box-shadow: none;
 		font-size: 1em;
 		padding: 0 1.3em;
 		line-height: 2.2em;
 		height: 2.3em;
 		&:hover {
-			color: @ndk-accent;
+			color: @isaac-accent;
 			border: 1px solid @white;
 			background: transparent;
 		}
@@ -480,14 +483,14 @@ body.platform-win32 {
 	.container-preference-tabs {
 		border-bottom: none;
 		.preferences-tabs {
-			background: darken(@ndk-dark, 3%) !important;
+			background: darken(@isaac-dark, 3%) !important;
 			border-bottom: none !important;
 			.item {
 				filter: grayscale(100%);
 				&.active {
-					background: @ndk-dark;
-					border: 1px solid darken(@ndk-dark, 4%);
-					border-bottom: 2px solid @ndk-dark;
+					background: @isaac-dark;
+					border: 1px solid darken(@isaac-dark, 4%);
+					border-bottom: 2px solid @isaac-dark;
 					filter: none;
 					margin-bottom: -1px;
 				}
@@ -495,13 +498,13 @@ body.platform-win32 {
 		}
 	}
 	.platform-note {
-		border-left-color: @ndk-accent;
+		border-left-color: @isaac-accent;
 	}
 	.platform-note:before {
-		color: @ndk-accent;
+		color: @isaac-accent;
 	}
 	.preferences-content.scroll-region {
-		background: @ndk-dark !important;
+		background: @isaac-dark !important;
 		.scroll-region-content {
 			width: 100%
 		}
@@ -529,7 +532,7 @@ body.platform-win32 {
 					}
 				}
 				.account-details {
-					background-color: @ndk-dark;
+					background-color: @isaac-dark;
 					border: none !important;
 					h3 {
 						font-size: 12px;
@@ -544,7 +547,7 @@ body.platform-win32 {
 			border-radius: @base-border-radius;
 			border: none !important;
 			.padded {
-				border-top: 1px solid lighten(@ndk-dark, 20%) !important;
+				border-top: 1px solid lighten(@isaac-dark, 20%) !important;
 				&:first-child {
 					border: none !important;
 				}
@@ -553,7 +556,7 @@ body.platform-win32 {
 				font-weight: 500;
 			}
 			.basic-explanation {
-				color: @ndk-light
+				color: @isaac-light
 			}
 		}
 		// Appearance
@@ -598,13 +601,13 @@ body.platform-win32 {
 				}
 				&:hover .values {
 					background: none;
-					border: 1px solid darken(@ndk-light, 40%);
+					border: 1px solid darken(@isaac-light, 40%);
 			    border-radius: @base-border-radius;
 			    outline: none;
 				}
 				&.editing .values {
-					background: darken(@ndk-light, 40%);
-					border: 1px solid darken(@ndk-light, 40%);
+					background: darken(@isaac-light, 40%);
+					border: 1px solid darken(@isaac-light, 40%);
 			    border-radius: @base-border-radius;
 			    outline: none;
 				}
@@ -623,7 +626,7 @@ body.platform-win32 {
 				.btn {font-weight: normal;}
 			}
 			.empty-list {
-				border-color: darken(@ndk-light, 40%);
+				border-color: darken(@isaac-light, 40%);
 			}
 		}
 		// Folders
@@ -644,7 +647,7 @@ body.platform-win32 {
 						background: transparent !important;
 						color: @white;
 						img.content-mask {
-							background-color: @ndk-accent;
+							background-color: @isaac-accent;
 						}
 					}
 				}
@@ -678,8 +681,8 @@ body.platform-win32 {
 			}
 			.signature-wrap {
 				.section {
-					background-color: @ndk-dark;
-					border-color: darken(@ndk-light, 40%);
+					background-color: @isaac-dark;
+					border-color: darken(@isaac-light, 40%);
 				}
 				.signature-template-picker {
 					border: none;
@@ -710,11 +713,11 @@ body.platform-win32 {
 			.template-wrap {
 				.RichEditor-root {
 					background-color: transparent;
-					border-color: darken(@ndk-light, 40%);
+					border-color: darken(@isaac-light, 40%);
 					padding-top: 15px;
 				}
 				.RichEditor-toolbar {
-					border-bottom: 1px solid darken(@ndk-light, 40%);
+					border-bottom: 1px solid darken(@isaac-light, 40%);
 					opacity: 1 !important;
 					height: 40px !important;
 					width: 100% !important;
@@ -722,8 +725,8 @@ body.platform-win32 {
 						background: transparent !important;
 					}
 					.floating-container {
-						background-color: @ndk-dark;
-						border-bottom: 1px solid darken(@ndk-light, 40%);
+						background-color: @isaac-dark;
+						border-bottom: 1px solid darken(@isaac-light, 40%);
 						min-height: 40px;
 						padding: 10px 0;
 					}
@@ -758,7 +761,7 @@ body.platform-win32 {
 			box-shadow: none !important;
 		}
 		.loading-cover {
-			background-color: fade(@ndk-dark, 70%);
+			background-color: fade(@isaac-dark, 70%);
 		}
 		.header h2 {
 			color: @white;
@@ -778,7 +781,7 @@ body.platform-win32 {
 			transition: all .25s ease-in-out;
 			width: auto !important;
 			&:hover {
-				color: @ndk-accent
+				color: @isaac-accent
 			}
 		}
 		.timespan-selector {
@@ -792,15 +795,15 @@ body.platform-win32 {
 					display: none;
 				}
 				.content-container {
-				background: lighten(@ndk-dark, 10%);
+				background: lighten(@isaac-dark, 10%);
 				.item {
 					padding: 5px 15px;
 					&:hover {
-						background: lighten(@ndk-dark, 12%);
+						background: lighten(@isaac-dark, 12%);
 						color: @white;
 					}
 					&.selected {
-						background: @ndk-accent;
+						background: @isaac-accent;
 						color: @white;
 					}
 					&.divider {
@@ -811,16 +814,16 @@ body.platform-win32 {
 			}
 		}
 		.section-divider {
-			border-bottom: 1px solid lighten(@ndk-dark, 2%);
+			border-bottom: 1px solid lighten(@isaac-dark, 2%);
 				div {
-					background: @ndk-dark;
+					background: @isaac-dark;
 					color: @white;
 			}
 		}
 		.usage-note {
 			background: none;
-			border-left: 4px solid @ndk-accent;
-			color: @ndk-light;
+			border-left: 4px solid @isaac-accent;
+			color: @isaac-light;
 		}
 		.metric-container {
 			.metric-graph {
@@ -829,7 +832,7 @@ body.platform-win32 {
 						opacity: .05;
 					}
 					&.text-overlay {
-						background: linear-gradient(to right, @ndk-dark 15%, rgba(255, 255, 255, 0));
+						background: linear-gradient(to right, @isaac-dark 15%, rgba(255, 255, 255, 0));
 					}
 					.text {
 						color: @white;
@@ -843,7 +846,7 @@ body.platform-win32 {
 				}
 			}
 			.footer {
-				border-top: 1px solid lighten(@ndk-dark, 2%);
+				border-top: 1px solid lighten(@isaac-dark, 2%);
 				padding-top: 10px
 			}
 		}
@@ -855,7 +858,7 @@ body.platform-win32 {
 		font-size: 1em;
 		.editable-item {
 			padding: 10px 15px;
-			border-bottom: 1px solid lighten(@ndk-dark, 2%);
+			border-bottom: 1px solid lighten(@isaac-dark, 2%);
 			input {
 				margin: 0;
 			}
@@ -866,7 +869,7 @@ body.platform-win32 {
 		padding: 7px
 	}
 	.btn-editable-list {
-		border: 1px solid lighten(@ndk-dark, 20%) !important;
+		border: 1px solid lighten(@isaac-dark, 20%) !important;
 		border-radius: 100px;
 		height: 35px;
     width: 35px;
@@ -887,7 +890,7 @@ body.platform-win32 {
 /* Modals */
 
 .modal-container.animate {
-	background-color: fade(@ndk-dark, 70%);
+	background-color: fade(@isaac-dark, 70%);
 }
 
 /* Scrollbars */
@@ -905,10 +908,10 @@ body.platform-win32 {
 	cursor: pointer;
 	border-radius: @base-border-radius;
 	border: none;
-	background: darken(@ndk-dark, 3%) !important;
+	background: darken(@isaac-dark, 3%) !important;
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: @ndk-accent !important;
+	background: @isaac-accent !important;
 }
 .scrollbar-track {
 	background: transparent;
@@ -922,10 +925,10 @@ body.platform-win32 {
 		cursor: pointer;
 		border-radius: @base-border-radius;
 		border: none !important;
-		background: darken(@ndk-dark, 2%) !important;
+		background: darken(@isaac-dark, 2%) !important;
 	}
 	.scrollbar-handle:hover {
-		background: @ndk-accent !important;
+		background: @isaac-accent !important;
 	}
 }
 

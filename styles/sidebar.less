@@ -3,7 +3,7 @@
 
 
 .column-RootSidebar {
-	background-color: darken(@ndk-dark, 2%);
+	background-color: darken(@isaac-dark, 2%);
 	padding: 15px 15px 0px;
 	.account-sidebar {
 		background: none;
@@ -12,7 +12,7 @@
 
 #account-switcher {
 	.primary-item .name {
-		color: @ndk-lighter;
+		color: @isaac-lighter;
 	}
 }
 
@@ -22,9 +22,9 @@
 }
 
 .sidebar-activity {
-	background: darken(@ndk-dark, 2%);
+	background: darken(@isaac-dark, 2%);
 	box-shadow: none;
-	color: @ndk-light;
+	color: @isaac-light;
 	font-size: 0.857em;
 	.item {
 		h2{
@@ -33,13 +33,13 @@
 			line-height: initial;
 		}
 		.inner {
-			border-bottom-color: lighten(@ndk-dark, 2%);
+			border-bottom-color: lighten(@isaac-dark, 2%);
 			padding-right: 18px;
 		}
 		.sync-activity {
 			overflow-y: auto;
 			.account {
-				border-bottom-color: lighten(@ndk-dark, 2%);
+				border-bottom-color: lighten(@isaac-dark, 2%);
 				.folder-progress:before {
 					background-color: #70ff70;
 				}
@@ -58,7 +58,7 @@
 			margin-right: 0;
 		}
 		.heading {
-			color: @ndk-light;
+			color: @isaac-light;
 			font-size: 0.857em;
 			font-weight: initial;
 			&:hover {
@@ -69,7 +69,7 @@
 			}
 			.add-item-button {
 				border-radius: 100px;
-				border: 1px solid @ndk-light;
+				border: 1px solid @isaac-light;
 				width: 1.75em;
 				height: 1em;
 				margin-left: 5px;
@@ -81,7 +81,7 @@
 	    	padding: 0 0.5em;
 			}
 			img {
-				visibility: hidden;
+				display: none;
 			}
 		}
 		// Hide icons
@@ -122,7 +122,7 @@
 			&:hover {
 				.disclosure-triangle {
 					div {
-						border-left-color: lighten(@ndk-dark, 40%);
+						border-left-color: lighten(@isaac-dark, 40%);
 					}
 				}
 			}
@@ -132,7 +132,7 @@
 				padding: 7px 0 7px 11px !important;
 				width: 15px;
 				div {
-					border-left-color: lighten(@ndk-dark, 10%);
+					border-left-color: lighten(@isaac-dark, 10%);
 					border-top-width: 3px;
 					border-bottom-width: 3px;
 					border-left-width: 5px;
@@ -140,20 +140,20 @@
 				}
 			}
 			.item {
-				color: @ndk-light;
+				color: @isaac-light;
 				cursor: pointer !important;
 				.item-count-box {
 					background: transparent !important;
-					border-left: 1px solid @ndk-dark;
+					border-left: 1px solid @isaac-dark;
 					border-radius: 0;
 					box-shadow: none !important;
-					color: @ndk-light !important;
+					color: @isaac-light !important;
 					font-size: 9px;
 					padding-left: 6px;
 					text-align: left;
 				}
 				&:hover {
-					color: lighten(@ndk-light, 20%);
+					color: lighten(@isaac-light, 20%);
 				}
 				&.selected {
 					color: @white !important;
@@ -175,7 +175,7 @@
 						overflow: visible;
 						&:before {
 						    content: "·";
-								color: @ndk-accent;
+								color: @isaac-accent;
 						    padding-right: 9px;
 						    margin-left: -12px;
 						}
