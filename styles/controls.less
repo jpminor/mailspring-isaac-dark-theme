@@ -267,7 +267,7 @@ body.platform-win32 {
 			margin-left: -1px
 		}
 		.secondary-items {
-			border-radius: @base-border-radius;
+			border-radius: @base-border-radius !important;
 			.item {
 				color: @isaac-light !important;
 				.seisaach-match {
@@ -275,10 +275,13 @@ body.platform-win32 {
 				}
 				.button-dropdown {
 					img {
-						background: @isaac-light !important;
+						background-color: @isaac-light !important;
 					}
 				}
 			}
+		}
+		img {
+			background-color: @isaac-light;
 		}
 	}
 }
