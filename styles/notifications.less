@@ -132,6 +132,20 @@
 				.activity-icon-container {
 					display: none;
 				}
+				div:nth-child(1) > div:nth-child(2) {
+					width: 0 !important;
+				}
+				.disclosure-triangle {
+					padding-left: 0;
+					padding-top: 6px;
+					margin-right: 2px;
+					div {
+						border-top: 3px solid transparent;
+						border-bottom: 3px solid transparent;
+						border-left: 5px solid lighten(@isaac-dark, 20%);
+					}
+				}
+
 			}
 			.activity-toggle-container {
 				background: lighten(@isaac-dark, 10%);
@@ -141,7 +155,7 @@
 						align-items: center;
 					}
 					&:last-child {
-						border-bottom: 1px solid lighten(@isaac-dark, 14%);
+						border-bottom: none;
 					}
 				}
 			}
