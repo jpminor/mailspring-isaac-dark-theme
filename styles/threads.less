@@ -2,8 +2,9 @@
 
 [name~="Center"] {
 	.column-ThreadList, .column-DraftList, .column-ActivityContent {
-		max-width: 900px;
+		max-width: 980px;
 		margin: auto;
+		padding: 0 40px;
 	}
 	.column-MessageList, {
 		margin: auto;
@@ -13,8 +14,8 @@
 	.btn.action {
 		box-shadow: none !important;
 		border: none !important;
-		-webkit-filter: invert(100%) brightness(200%) !important;
-		filter: invert(100%) brightness(200%) !important;
+		-webkit-filter: invert(.5) brightness(1) !important;
+		filter: invert(.5) brightness(1) !important;
 	}
 	&.focused {
 		.btn.action {
@@ -25,16 +26,17 @@
 	&.keyboard-cursor {
 		border-left: 4px solid @isaac-accent;
 		&.selected {
-			border-left: 4px solid @white;
+			border-left: 4px solid lighten(@isaac-accent, 10%);;
 		}
 	}
 	.checkmark .inner {
-		border-color: darken(@isaac-light, 40%);
+		background-color: @isaac-light;
+		border: none;
 	}
 	&.selected {
 		.checkmark .inner {
 			background-color: transparent;
-			border: 1px solid @white;
+			border: transparent;
 		}
 	}
 	.details {
@@ -43,14 +45,9 @@
 		}
 	}
 }
-
-.thread-list-narrow .snippet-and-labels .snippet {
-	display: none;
-}
-
 .open-tracking-icon,.open-tracking-message-status {
 	.content-mask {
-		background-color: @isaac-light;
+		background-color: @isaac-dark;
 		zoom: .4 !important;
 	}
 }
@@ -64,6 +61,7 @@
     display: none !important;
 	}
 	.timestamp {
+		font-size: 0.857em;
 		opacity: 1;
 	}
 	.list-container {
@@ -71,8 +69,8 @@
 			.thread-icon,
 			.mail-important-icon,
 			.draft-icon {
-				-webkit-filter: brightness(100) !important;
-				filter: brightness(100) !important;
+				-webkit-filter: invert(.5) brightness(1) !important;
+				filter: invert(.5) brightness(1) !important;
 				height: 25px;
 			}
 			.mail-important-icon {
@@ -92,15 +90,15 @@
 			}
 			.thread-icon-star, .thread-icon-star:hover {
 				background-size: 12px;
-				-webkit-filter: invert(1) brightness(999999999) !important;
-				filter: invert(1) brightness(999999999) !important;
+				-webkit-filter: invert(.5) brightness(1) !important;
+				filter: invert(.5) brightness(1) !important;
 			}
 			.thread-icon-attachment {
-				opacity: 0.2;
+				opacity: 0.5;
 				background-size: 10px;
 			}
 			&.focused:hover .list-column-HoverActions .inner {
-				color: @white !important;
+				color: @isaac-dark !important;
 				.thread-icon {
 					&:not(.thread-icon-star) {
 						opacity: 0.7;
@@ -111,14 +109,17 @@
 				border-bottom: 0;
 			}
 			&:hover {
+				.checkmark .inner {
+					background-color: darken(@isaac-accent-light, 2%);
+				}
 				.thread-icon {
 					visibility: inherit;
 				}
 				.list-column-HoverActions .inner {
-					color: @white !important;
+					color: @isaac-dark !important;
 					background-image: none;
 					.thread-injected-quick-actions {
-						background-color: lighten(@isaac-dark, 7%);
+						background-color: @isaac-accent-light;
 						padding-left: 7px;
 					}
 					.action {
@@ -145,11 +146,11 @@
 			.list-item {
 				cursor: pointer !important;
 				box-sizing: border-box;
-				background-color: lighten(@isaac-dark, 5%);
-				color: @isaac-light;
-				border-bottom: 1px solid lighten(@isaac-dark, 2%);
+				background-color: @white;
+				color: @isaac-dark;
+				border-bottom: 1px solid darken(@isaac-light, 2%);
 				&.unread {
-					color: @white;
+					color: @isaac-dark;
 					.participants, .timestamp {
 						font-weight: 600
 					}
@@ -158,32 +159,46 @@
 					color: inherit;
 				}
 				.mail-label {
+					display: none; // Global hide labels in message lists
 					-webkit-filter: none;
 					filter: none;
 					margin-right: 2px;
 					font-size: 0.75em;
-					color: @isaac-light !important;
-					background: (@isaac-dark) !important;
+					color: @isaac-dark !important;
+					background: @isaac-light !important;
 					border-radius: @base-border-radius;
 					box-shadow: none !important;
 					line-height: 19px;
 					.snooze-mail-label img {
-						background-color: @white;
+						background-color: @isaac-dark;
 						margin-right: 10px;
 						zoom: 0.4 !important;
 					}
 				}
 				&:hover {
-					background-color: lighten(@isaac-dark, 7%);
+					background-color: @isaac-accent-light;
+					&.selected {
+						.checkmark .inner {
+							background-color: transparent;
+						}
+					}
 				}
 				&.focused {
-					color: @isaac-light !important;
-					border-left: 4px solid @white;
+					color: @isaac-dark !important;
+					border-left: 4px solid dark(@isaac-light, 10%);
 				}
 				&.selected {
 					color: @white !important;
 					background-color: @isaac-accent !important;
+					.thread-icon,
+					.mail-important-icon,
+					.draft-icon,
+					.thread-icon-star, .thread-icon-star:hover {
+						-webkit-filter: invert(1) brightness(999999) !important;
+						filter: invert(1) brightness(999999) !important;
+					}
 					.mail-label {
+						display: inline-block;
 						opacity: .3;
 						.snooze-mail-label img {
 							background-color: @isaac-accent;
@@ -191,10 +206,14 @@
 						}
 					}
 					.list-column-HoverActions .inner {
-						color: @white !important;
+						color: @isaac-dark !important;
 						background-image: none;
 						.thread-injected-quick-actions {
-							background-color: #7d7ac2;
+							background-color: @isaac-accent;
+							.btn.action {
+								-webkit-filter: invert(1) brightness(999999999) !important;
+								filter: invert(1) brightness(999999999) !important;
+							}
 						}
 					}
 					.participants.no-recipients {
@@ -214,24 +233,22 @@
 }
 
 .thread-list-empty-folder-bar {
-	background: @isaac-dark;
+	background: @isaac-light;
 	border: none;
-	color: lighten(@isaac-dark, 40%);
+	color: @isaac-dark;
 	padding: 20px 15px;
 	border-radius: @base-border-radius;
 	.btn {
 		background: transparent;
-		border: 1px solid	@white;
+		border: 1px solid	lighten(@isaac-dark, 50%);
 		border-radius: 100px;
 		color: @isaac-accent;
 		height: 36px;
 		line-height: initial;
 		padding: 9px 20px;
-		transition: all .25s ease-in-out;
+		transition: all .2s ease-in-out;
 		&:hover {
-			background: @isaac-accent;
 			border: 1px solid	@isaac-accent;
-			color: @white;
 		}
 	}
 }
@@ -239,24 +256,24 @@
 .thread-seisaach-bar {
 	.menu.showing-query.seisaach-container.showing-suggestions {
 		.content-container {
-			background: darken(@isaac-dark, 3%);
+			background: darken(@isaac-light, 3%);
 			.item {
-				color: darken(@isaac-light, 20%);
+				color: @isaac-dark;
 				span {
 					.primary {
 						color: inherit;
 					}
 					.secondary {
-						color: darken(@isaac-light, 40%);
+						color: darken(@isaac-dark, 40%);
 					}
 				}
 				&:hover {
-					color: @isaac-light;
-					background: darken(@isaac-dark, 5%);
+					color: @isaac-dark;
+					background: darken(@isaac-light, 5%);
 				}
 				&.divider {
-					background: darken(@isaac-dark, 3%) !important;
-					color: darken(@isaac-light, 10%);
+					background: darken(@isaac-light, 3%) !important;
+					color: darken(@isaac-dark, 10%);
 				}
 				&.selected {
 					border-radius: @base-border-radius;
@@ -285,9 +302,20 @@
 		.draft-list {
 			.list-container
 				.list-item {
+					.mail-label {
+						display: none;
+					}
 					.draft-icon {
 						margin-top: 32px;
 						zoom: 0.4 !important;
+					}
+					&:hover {
+						.mail-label {
+							background: @isaac-accent-light !important;
+							border-right: 1px solid lighten(@isaac-dark, 50%);
+							border-radius: 0;
+							display: inline-block;
+						}
 					}
 				}
 			.timestamp {
@@ -300,12 +328,12 @@
 			padding-bottom: 50px !important;
 		}
 		.scroll-region-content {
-			padding-top: 50px;
-			padding-bottom: 50px;
+			padding: 50px 10px;
 			width: 100%;
 			.scroll-region-content-inner {
 				.list-rows {
-					box-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.3), 0 -0.5px 0 rgba(0, 0, 0, 0.3), 0.5px 0 0 rgba(0, 0, 0, 0.5), -0.5px 0 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.3);
+						border: 1px solid @isaac-border;
+						box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 14px 5px;
 				}
 			}
 		}
@@ -313,11 +341,28 @@
 }
 
 .layout-mode-split {
+	[name~="Center"] .column-ThreadList, [name~="Center"] .column-DraftList, [name~="Center"] .column-ActivityContent {
+		padding: 0;
+	}
 	.thread-list,
 	.draft-list {
 		.list-container .list-item .list-column {
 			padding-left: 4px !important;
 			padding-right: 8px !important;
+		}
+	}
+	.thread-list-narrow {
+		.thread-info-column {
+			.snippet-and-labels {
+				margin-top: 5px;
+				.snippet {
+					display: none;
+				}
+				// Left align labels in narrow column
+				& > div:nth-child(2) {
+					flex: none !important;
+				}
+			}
 		}
 	}
 	.scroll-region-content {
