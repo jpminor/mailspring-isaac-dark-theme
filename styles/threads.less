@@ -2,7 +2,7 @@
 
 [name~="Center"] {
 	.column-ThreadList, .column-DraftList, .column-ActivityContent {
-		max-width: 980px;
+		max-width: 900px;
 		margin: auto;
 		padding: 0 40px;
 	}
@@ -14,8 +14,8 @@
 	.btn.action {
 		box-shadow: none !important;
 		border: none !important;
-		-webkit-filter: invert(.5) brightness(1) !important;
-		filter: invert(.5) brightness(1) !important;
+		-webkit-filter: invert(100%) brightness(200%) !important;
+		filter: invert(100%) brightness(200%) !important;
 	}
 	&.focused {
 		.btn.action {
@@ -26,11 +26,11 @@
 	&.keyboard-cursor {
 		border-left: 4px solid @isaac-accent;
 		&.selected {
-			border-left: 4px solid lighten(@isaac-accent, 10%);;
+			border-left: 4px solid lighten(@isaac-accent, 10%);
 		}
 	}
 	.checkmark .inner {
-		background-color: @isaac-light;
+		border-color: darken(@isaac-light, 40%);
 		border: none;
 	}
 	&.selected {
@@ -45,9 +45,14 @@
 		}
 	}
 }
+
+.thread-list-narrow .snippet-and-labels .snippet {
+	display: none;
+}
+
 .open-tracking-icon,.open-tracking-message-status {
 	.content-mask {
-		background-color: @isaac-dark;
+		background-color: @isaac-light;
 		zoom: .4 !important;
 	}
 }
@@ -69,8 +74,8 @@
 			.thread-icon,
 			.mail-important-icon,
 			.draft-icon {
-				-webkit-filter: invert(.5) brightness(1) !important;
-				filter: invert(.5) brightness(1) !important;
+				-webkit-filter: brightness(100) !important;
+				filter: brightness(100) !important;
 				height: 25px;
 			}
 			.mail-important-icon {
@@ -90,15 +95,15 @@
 			}
 			.thread-icon-star, .thread-icon-star:hover {
 				background-size: 12px;
-				-webkit-filter: invert(.5) brightness(1) !important;
-				filter: invert(.5) brightness(1) !important;
+				-webkit-filter: invert(1) brightness(999999999) !important;
+				filter: invert(1) brightness(999999999) !important;
 			}
 			.thread-icon-attachment {
-				opacity: 0.5;
+				opacity: 0.2;
 				background-size: 10px;
 			}
 			&.focused:hover .list-column-HoverActions .inner {
-				color: @isaac-dark !important;
+				color: @white !important;
 				.thread-icon {
 					&:not(.thread-icon-star) {
 						opacity: 0.7;
@@ -110,16 +115,16 @@
 			}
 			&:hover {
 				.checkmark .inner {
-					background-color: darken(@isaac-accent-light, 2%);
+					background-color: lighten(@isaac-dark, 2%);
 				}
 				.thread-icon {
 					visibility: inherit;
 				}
 				.list-column-HoverActions .inner {
-					color: @isaac-dark !important;
+					color: @white !important;
 					background-image: none;
 					.thread-injected-quick-actions {
-						background-color: @isaac-accent-light;
+						background-color: lighten(@isaac-dark, 7%);
 						padding-left: 7px;
 					}
 					.action {
@@ -146,11 +151,11 @@
 			.list-item {
 				cursor: pointer !important;
 				box-sizing: border-box;
-				background-color: @white;
-				color: @isaac-dark;
-				border-bottom: 1px solid darken(@isaac-light, 2%);
+				background-color: lighten(@isaac-dark, 5%);
+				color: @isaac-light;
+				border-bottom: 1px solid lighten(@isaac-dark, 2%);
 				&.unread {
-					color: @isaac-dark;
+					color: @white;
 					.participants, .timestamp {
 						font-weight: 600
 					}
@@ -159,24 +164,23 @@
 					color: inherit;
 				}
 				.mail-label {
-					display: none; // Global hide labels in message lists
 					-webkit-filter: none;
 					filter: none;
 					margin-right: 2px;
 					font-size: 0.75em;
-					color: @isaac-dark !important;
-					background: @isaac-light !important;
+					color: @isaac-light !important;
+					background: (@isaac-dark) !important;
 					border-radius: @base-border-radius;
 					box-shadow: none !important;
 					line-height: 19px;
 					.snooze-mail-label img {
-						background-color: @isaac-dark;
+						background-color: @white;
 						margin-right: 10px;
 						zoom: 0.4 !important;
 					}
 				}
 				&:hover {
-					background-color: @isaac-accent-light;
+					background-color: lighten(@isaac-dark, 7%);
 					&.selected {
 						.checkmark .inner {
 							background-color: transparent;
@@ -184,19 +188,12 @@
 					}
 				}
 				&.focused {
-					color: @isaac-dark !important;
-					border-left: 4px solid dark(@isaac-light, 10%);
+					color: @isaac-light !important;
+					border-left: 4px solid @white;
 				}
 				&.selected {
 					color: @white !important;
 					background-color: @isaac-accent !important;
-					.thread-icon,
-					.mail-important-icon,
-					.draft-icon,
-					.thread-icon-star, .thread-icon-star:hover {
-						-webkit-filter: invert(1) brightness(999999) !important;
-						filter: invert(1) brightness(999999) !important;
-					}
 					.mail-label {
 						display: inline-block;
 						opacity: .3;
@@ -206,14 +203,10 @@
 						}
 					}
 					.list-column-HoverActions .inner {
-						color: @isaac-dark !important;
+						color: @white !important;
 						background-image: none;
 						.thread-injected-quick-actions {
-							background-color: @isaac-accent;
-							.btn.action {
-								-webkit-filter: invert(1) brightness(999999999) !important;
-								filter: invert(1) brightness(999999999) !important;
-							}
+							background-color: #7d7ac2;
 						}
 					}
 					.participants.no-recipients {
@@ -233,22 +226,24 @@
 }
 
 .thread-list-empty-folder-bar {
-	background: @isaac-light;
+	background: @isaac-dark;
 	border: none;
-	color: @isaac-dark;
+	color: lighten(@isaac-dark, 40%);
 	padding: 20px 15px;
 	border-radius: @base-border-radius;
 	.btn {
 		background: transparent;
-		border: 1px solid	lighten(@isaac-dark, 50%);
+		border: 1px solid	@white;
 		border-radius: 100px;
 		color: @isaac-accent;
 		height: 36px;
 		line-height: initial;
 		padding: 9px 20px;
-		transition: all .2s ease-in-out;
+		transition: all .25s ease-in-out;
 		&:hover {
+			background: @isaac-accent;
 			border: 1px solid	@isaac-accent;
+			color: @white;
 		}
 	}
 }
@@ -256,24 +251,24 @@
 .thread-seisaach-bar {
 	.menu.showing-query.seisaach-container.showing-suggestions {
 		.content-container {
-			background: darken(@isaac-light, 3%);
+			background: darken(@isaac-dark, 3%);
 			.item {
-				color: @isaac-dark;
+				color: darken(@isaac-light, 20%);
 				span {
 					.primary {
 						color: inherit;
 					}
 					.secondary {
-						color: darken(@isaac-dark, 40%);
+						color: darken(@isaac-light, 40%);
 					}
 				}
 				&:hover {
-					color: @isaac-dark;
-					background: darken(@isaac-light, 5%);
+					color: @isaac-light;
+					background: darken(@isaac-dark, 5%);
 				}
 				&.divider {
-					background: darken(@isaac-light, 3%) !important;
-					color: darken(@isaac-dark, 10%);
+					background: darken(@isaac-dark, 3%) !important;
+					color: darken(@isaac-light, 10%);
 				}
 				&.selected {
 					border-radius: @base-border-radius;
@@ -311,7 +306,7 @@
 					}
 					&:hover {
 						.mail-label {
-							background: @isaac-accent-light !important;
+							background: lighten(@isaac-dark, 7%) !important;
 							border-right: 1px solid lighten(@isaac-dark, 50%);
 							border-radius: 0;
 							display: inline-block;
@@ -328,12 +323,12 @@
 			padding-bottom: 50px !important;
 		}
 		.scroll-region-content {
-			padding: 50px 10px;
+			padding-top: 50px;
+			padding-bottom: 50px;
 			width: 100%;
 			.scroll-region-content-inner {
 				.list-rows {
-						border: 1px solid @isaac-border;
-						box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 14px 5px;
+					box-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.3), 0 -0.5px 0 rgba(0, 0, 0, 0.3), 0.5px 0 0 rgba(0, 0, 0, 0.5), -0.5px 0 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.3);
 				}
 			}
 		}
