@@ -6,6 +6,10 @@ canvas {
 	position: relative !important;
 }
 
+body, mailspring-workspace {
+	font-family: 'system-ui';
+}
+
 body {
 	background: @isaac-dark;
 	h1, h2, h3, h4, h5, h6 {
@@ -39,8 +43,8 @@ pre {
 		background: @isaac-dark;
 		border-bottom: 1px solid lighten(@isaac-dark, 2%);
 		height: 57px;
-    min-height: 57px;
-    max-height: 57px;
+    	min-height: 57px;
+    	max-height: 57px;
 		padding: 10px 5px 0;
 		.sheet-toolbar-container {
 			background: @isaac-dark;
@@ -231,7 +235,6 @@ a:hover {
 }
 
 .toolbar-window-controls button {
-	background-size: 12px 50px;
 	border-radius: 100px;
 	filter: grayscale(100%);
 }
