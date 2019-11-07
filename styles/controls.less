@@ -234,9 +234,21 @@ a:hover {
 	font-size: 13px;
 }
 
-.toolbar-window-controls button {
-	border-radius: 100px;
-	filter: grayscale(100%);
+.toolbar-window-controls {
+	margin-top: 9px;
+	button {
+		border-radius: 100px;
+		filter: grayscale(100%);
+		width: 13px;
+    	height: 13px;
+		&.close, &.minimize, &.maximize {
+			background-image: none;
+	    	background-color: #444444;
+		}
+    	&:hover {
+    		background-color: #aaaaaa;
+ 		}
+	}
 }
 
 body.platform-win32 {
